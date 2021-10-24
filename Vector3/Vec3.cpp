@@ -58,6 +58,16 @@ Vec3<T> Vec3<T>::cross_prod(Vec3<T> b)
 	dotVec.x = this->y * b.getZ() - this->z * b.getY();
 	dotVec.y = this->z * b.getX() - this->x * b.getZ();
 	dotVec.z = this->x * b.getY() - this->y * b.getX();
-	
+
 	return dotVec;
 }
+template<class T>
+T Vec3<T>::angle_between(Vec3<T> b) {
+
+	double a = (x * b.x + y * b.y + z * b.z) / sqrt(x*x +y*y + z*z) * sqrt(b.x*b.x + b.y*b.y + b.z*b.z), result;
+	
+	return acos(a);
+}
+	
+
+

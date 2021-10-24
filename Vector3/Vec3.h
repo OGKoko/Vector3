@@ -21,7 +21,8 @@ public:
 	T distance_to(Vec3<T> b);
 	T dot_prod(Vec3<T> b);
 	Vec3<T> cross_prod(Vec3<T> b);
-	//T angle_between(Vec3<T> b);
+	T angle_between(Vec3<T> b);
+
 
 	T getX();
 	T getY();
