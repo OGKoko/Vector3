@@ -6,23 +6,30 @@
 
 using namespace std;
 
-template <typename T>
-class Vec3{
-
+template <class T>
+class Vec3 {
 private:
-	T x, y, z;
+	T x;
+	T y;
+	T z;
 
 public:
-	
 	Vec3();
-
 	Vec3(T _x, T  _y, T  _z);
 
-	T NormalizeVector();
-	double Distance_to(Vec3 b);
-	double Dot_prod(Vec3 b);
+	T normalizeVector();
+	T distance_to(Vec3<T> b);
+	T dot_prod(Vec3<T> b);
+	Vec3<T> cross_prod(Vec3<T> b);
+	//T angle_between(Vec3<T> b);
+
 	T getX();
 	T getY();
 	T getZ();
-};
 
+	
+
+	Vec3<T> operator +(Vec3<T>& v) {
+		return Vec3<T>(this->x + v.x, this->y + v.y, this->z + v.z);
+	}
+};
